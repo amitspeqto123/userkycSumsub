@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 
+
 //import authRoutes from "./routes/authRoute.js";
 import authRoute from "./routes/user.route.js"
 import profileRoute from "./routes/profile.route.js"
