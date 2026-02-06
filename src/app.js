@@ -1,0 +1,28 @@
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+
+//import authRoutes from "./routes/authRoute.js";
+import authRoute from "./routes/user.route.js"
+import profileRoute from "./routes/profile.route.js"
+import kycRoute from "./routes/kyc.route.js"
+
+
+const app = express();
+
+// Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.raw({ type: 'application/json' })); // Removed global raw middleware - handled per route
+app.use(cors({ origin: true, credentials: true }));
+app.use(helmet());
+app.use(morgan("dev"));
+
+
+// Routes
+app.use("/v1/auth", authRoute);
+app.use("/v1/profile", profileRoute);
+app.use("/v1/kyc", kycRoute);
+
+export default app;
