@@ -16,7 +16,7 @@ const io = new Server(httpServer, {
   },
 });
 
-// ⚡ WebSocket connection
+// WebSocket connection
 io.on("connection", (socket) => {
   console.log("Client connected:", socket.id);
 
