@@ -3,7 +3,7 @@ dotenv.config();
 
 import app from "./app.js";
 import { sumsubKyc } from "./config/db.js";
-import { createServer } from "http";
+//import { createServer } from "http";
 import { Server } from "socket.io";
 
 const PORT = process.env.PORT || 3000;
